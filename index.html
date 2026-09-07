@@ -413,6 +413,141 @@ a {
   margin-top: 0;
 }
 
+.about-gallery {
+  margin-top: 84px;
+  border-top: 1px solid var(--line);
+  padding-top: 68px;
+}
+
+.about-gallery-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 64px;
+  align-items: end;
+}
+
+.about-gallery-head h3 {
+  margin-top: 14px;
+  font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 1.08;
+}
+
+.about-gallery-head > p {
+  max-width: 510px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.9;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  grid-auto-rows: 230px;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.photo-grid--more {
+  margin-top: 14px;
+}
+
+.photo-grid[hidden] {
+  display: none;
+}
+
+.photo-card {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #d9d3c5;
+}
+
+.photo-card--featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.photo-card--portrait {
+  grid-row: span 2;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.photo-card:hover img {
+  transform: scale(1.025);
+}
+
+.photo-card figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 54px 18px 16px;
+  background: linear-gradient(transparent, rgba(18, 35, 27, 0.72));
+  color: #fff;
+  font-size: 0.88rem;
+  letter-spacing: 0.025em;
+  line-height: 1.45;
+}
+
+.photo-toggle {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px auto 0;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 11px 24px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.photo-toggle:hover,
+.photo-toggle:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.photo-toggle-hide {
+  display: none;
+}
+
+.photo-toggle[aria-expanded="true"] .photo-toggle-show {
+  display: none;
+}
+
+.photo-toggle[aria-expanded="true"] .photo-toggle-hide {
+  display: inline;
+}
+
+.photo-toggle-icon {
+  display: inline-block;
+  font-size: 1.05rem;
+  transition: transform 180ms ease;
+}
+
+.photo-toggle[aria-expanded="true"] .photo-toggle-icon {
+  transform: rotate(180deg);
+}
+
 .reserved-section {
   background: var(--paper);
   scroll-margin-top: 20px;
@@ -1089,6 +1224,16 @@ body:not(.lang-en) .en {
     gap: 26px;
   }
 
+  .about-gallery-head {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 205px;
+  }
+
   .impact-header,
   .story-header,
   .daily-header {
@@ -1168,6 +1313,27 @@ body:not(.lang-en) .en {
   .about-impact {
     margin-top: 52px;
     padding-top: 48px;
+  }
+
+  .about-gallery {
+    margin-top: 52px;
+    padding-top: 48px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 155px;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .photo-grid--more {
+    margin-top: 8px;
+  }
+
+  .photo-card figcaption {
+    padding: 44px 12px 12px;
+    font-size: 0.75rem;
   }
 
   .hero {
@@ -1555,6 +1721,72 @@ body:not(.lang-en) .en {
         <div class="impact-stats"><article class="impact-stat"><strong>2016—至今</strong><h3><span class="zh">持续开展救助</span><span class="en">Ongoing rescue work</span></h3><p class="zh">从成立至今，始终关注流浪动物的救助与安置。</p><p class="en">Since our founding, we have stayed committed to rescue and rehoming.</p></article><article class="impact-stat"><strong>1000+</strong><h3><span class="zh">只狗狗</span><span class="en">Dogs helped</span></h3><p class="zh">累计救助和照护超过1000只狗狗。</p><p class="en">More than 1,000 dogs have received rescue and care.</p></article><article class="impact-stat"><strong>100+</strong><h3><span class="zh">只猫咪</span><span class="en">Cats helped</span></h3><p class="zh">为超过100只猫咪提供救助、照护或安置帮助。</p><p class="en">More than 100 cats have received rescue, care or rehoming support.</p></article></div>
         <p class="impact-lead zh">许多动物已经进入新的家庭。我们也会持续关注它们领养后的适应情况，了解它们在新家的生活。</p><p class="impact-lead en">Many animals have found new families. We continue to follow up on their adjustment and life after adoption.</p>
       </div>
+      <div class="page-shell about-gallery" id="about-gallery">
+        <div class="about-gallery-head">
+          <div>
+            <span class="section-kicker">🐾 <span class="zh">真实的基地，真实的日常</span><span class="en">Real shelter, everyday moments</span></span>
+            <h3><span class="zh">它们在这里生活</span><span class="en">Life at Yatian</span></h3>
+          </div>
+          <p><span class="zh">在这里，它们有同伴、有活动，也有被照顾和被珍惜的每一天。</span><span class="en">Here, they have companionship, time to play, and the daily care every animal deserves.</span></p>
+        </div>
+        <div class="photo-grid" aria-label="Photos of dogs living at Yatian Pet Paradise">
+          <figure class="photo-card photo-card--featured">
+            <img src="assets/photos/web/WechatIMG176.jpg" alt="Five rescued dogs, including dogs using mobility carts, together outdoors" loading="lazy" decoding="async">
+            <figcaption><span class="zh">彼此陪伴，也一起向前</span><span class="en">Moving forward, together</span></figcaption>
+          </figure>
+          <figure class="photo-card photo-card--portrait">
+            <img src="assets/photos/web/WechatIMG181.jpg" alt="A young tan puppy looking into the camera" loading="lazy" decoding="async">
+            <figcaption><span class="zh">在照顾中安心长大</span><span class="en">Growing up safe and cared for</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG177.jpg" alt="A black-and-white dog greeting the camera at the shelter" loading="lazy" decoding="async">
+            <figcaption><span class="zh">每天熟悉的问候</span><span class="en">A familiar hello each day</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG189.jpg" alt="A large dog resting with a soft toy on its head" loading="lazy" decoding="async">
+            <figcaption><span class="zh">阳光下的休息时光</span><span class="en">A quiet moment in the sun</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG193.jpg" alt="A smiling cream-colored dog among its shelter companions" loading="lazy" decoding="async">
+            <figcaption><span class="zh">在基地安心生活</span><span class="en">Safe and at home here</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG206.jpg" alt="A black-and-tan puppy being gently held" loading="lazy" decoding="async">
+            <figcaption><span class="zh">被照顾，也是被珍惜</span><span class="en">Cared for and cherished</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG180.jpg" alt="A large white dog standing at the shelter gate" loading="lazy" decoding="async">
+            <figcaption><span class="zh">等待每天的活动时间</span><span class="en">Ready for daily playtime</span></figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/web/WechatIMG183.jpg" alt="A small black dog wearing a colorful coat with other dogs nearby" loading="lazy" decoding="async">
+            <figcaption><span class="zh">和伙伴们生活在一起</span><span class="en">Life with friends</span></figcaption>
+          </figure>
+        </div>
+        <div class="photo-grid photo-grid--more" id="more-photos" aria-label="More photos of dogs at Yatian Pet Paradise" hidden>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG175.jpg" alt="Dogs gathering together in their shelter enclosure" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG178.jpg" alt="A black-and-white dog resting its paws by the fence" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG179.jpg" alt="A black-and-white dog smiling at the camera" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG182.jpg" alt="A fluffy tan dog looking into the camera" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG184.jpg" alt="A white shaggy dog enjoying time outdoors" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG185.jpg" alt="A white shaggy dog relaxing at the shelter" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG186.jpg" alt="A tan dog sitting for a close portrait" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG187.jpg" alt="A tan spitz-like dog standing in the shelter yard" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG188.jpg" alt="A white dog wearing red tassels" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG190.jpg" alt="A smiling white dog looking at the camera" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG194.jpg" alt="A tan dog smiling with its tongue out" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG197.jpg" alt="A white-and-tan dog standing outdoors" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG198.jpg" alt="A tan dog standing among shelter companions" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG201.jpg" alt="A tan dog standing attentively in the shelter yard" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG204.jpg" alt="A rescued tan dog spending time outdoors" loading="lazy" decoding="async"></figure>
+          <figure class="photo-card"><img src="assets/photos/web/WechatIMG205.jpg" alt="A small black puppy looking into the camera" loading="lazy" decoding="async"></figure>
+        </div>
+        <button class="photo-toggle" type="button" aria-expanded="false" aria-controls="more-photos">
+          <span class="photo-toggle-show"><span class="zh">查看更多照片</span><span class="en">View More Photos</span></span>
+          <span class="photo-toggle-hide"><span class="zh">收起照片</span><span class="en">Show Fewer Photos</span></span>
+          <span class="photo-toggle-icon" aria-hidden="true">↓</span>
+        </button>
+      </div>
     </section>
     <section class="reserved-section" id="stories"><div class="page-shell story-inner"><div class="story-header"><span class="reserved-number">03</span><div><span class="section-kicker"><span class="zh">记录被看见、被治愈与重新回家的过程</span><span class="en">Stories of being seen, healed and welcomed home</span></span><h2><span class="zh">救助故事</span><span class="en">Rescue Stories</span></h2></div></div><p class="story-lead zh">从流浪到被看见</p><p class="story-lead en">From the streets to being seen</p><div class="story-copy"><p class="zh">来到基地的动物有着不同的经历。有些曾遭遇车祸和疾病，有些曾被遗弃或受到伤害，也有些因为主人无法继续照顾而失去了原来的家。</p><p class="en">Every animal arrives with a different story. Some have faced accidents or illness, some have been abandoned or hurt, and others lost their homes when their people could no longer care for them.</p><p class="zh">我们会根据每只动物的实际情况，为它们安排检查、治疗、营养补充和日常照护。很多动物从最初的害怕和防备，慢慢恢复健康，也重新开始信任人类。</p><p class="en">We arrange examinations, treatment, nutrition and daily care according to each animal's needs. Many slowly recover from fear and defensiveness, and begin to trust people again.</p><p class="zh">其中一些幸运的动物已经被合适的家庭领养，拥有了属于自己的名字和家。它们的改变，也是我们坚持救助的意义。</p><p class="en">Some lucky animals have been adopted by the right families, gaining a name and a home of their own. Their transformation is why we continue.</p></div></div></section>
     <section class="reserved-section reserved-soft" id="daily"><div class="page-shell daily-inner"><div class="daily-header"><span class="reserved-number">04</span><div><span class="section-kicker"><span class="zh">真实记录亚天宠物乐园的每一天</span><span class="en">Real moments from daily life at Yatian Pet Paradise</span></span><h2><span class="zh">基地日常</span><span class="en">Life at the Shelter</span></h2></div></div><p class="daily-lead zh">基地的每一天，都由许多细小而重要的工作组成。</p><p class="daily-lead en">Every day at the shelter is made up of many small but important acts of care.</p><div class="daily-grid"><article class="daily-card"><span>01</span><h3><span class="zh">饮食与清洁</span><span class="en">Food and clean spaces</span></h3><p class="zh">按时准备食物和清洁饮水，打扫并消毒生活区域。</p><p class="en">We prepare food and fresh water on schedule, and clean and disinfect living areas.</p></article><article class="daily-card"><span>02</span><h3><span class="zh">健康观察</span><span class="en">Health checks</span></h3><p class="zh">留意每只动物的身体状况和精神状态，及时发现异常。</p><p class="en">We watch every animal's physical condition and mood so changes can be noticed early.</p></article><article class="daily-card"><span>03</span><h3><span class="zh">活动与陪伴</span><span class="en">Play and companionship</span></h3><p class="zh">狗狗每天分批到安全区域奔跑、晒太阳和玩耍。</p><p class="en">Dogs take turns visiting a safe area each morning and afternoon to run, play and enjoy the sun.</p></article></div><p class="daily-lead zh">冬天，我们尽力提供温暖舒适的休息空间；夏天则做好通风和降温，确保饮水干净充足。这些日复一日的照顾，是为了让它们安全、健康地生活，也为将来进入新的家庭做好准备。</p><p class="daily-lead en">In winter we provide warm, comfortable resting spaces. In summer we focus on ventilation, cooling and plentiful clean water. This daily care helps animals live safely and prepares them for future homes.</p></div></section>
@@ -1662,6 +1894,17 @@ languageButtons.forEach((button) => {
 document.querySelectorAll(".mobile-menu a").forEach((link) => {
   link.addEventListener("click", () => link.closest("details")?.removeAttribute("open"));
 });
+
+const photoToggle = document.querySelector(".photo-toggle");
+const morePhotos = document.querySelector("#more-photos");
+
+if (photoToggle && morePhotos) {
+  photoToggle.addEventListener("click", () => {
+    const expanded = photoToggle.getAttribute("aria-expanded") === "true";
+    photoToggle.setAttribute("aria-expanded", String(!expanded));
+    morePhotos.hidden = expanded;
+  });
+}
 
 setLanguage("en");
 
