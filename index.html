@@ -263,14 +263,16 @@ a {
   margin: 0;
   font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: 0.045em;
+  text-wrap: balance;
 }
 
 .hero h1 {
-  max-width: 980px;
+  max-width: 900px;
   margin-top: 26px;
-  font-size: clamp(4.2rem, 8vw, 7.6rem);
-  line-height: 1.02;
+  font-size: clamp(4.4rem, 8.4vw, 7.9rem);
+  line-height: 1.05;
+  letter-spacing: 0.075em;
 }
 
 .hero-line {
@@ -390,8 +392,8 @@ a {
 
 .intro-copy h2 {
   max-width: 820px;
-  font-size: clamp(3.2rem, 6vw, 6.2rem);
-  line-height: 1.12;
+  font-size: clamp(3.3rem, 6.2vw, 6.3rem);
+  line-height: 1.14;
 }
 
 .intro-copy p {
@@ -433,8 +435,9 @@ a {
   font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
   font-size: clamp(3rem, 5vw, 5.2rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: 0.055em;
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 .reserved-status {
@@ -480,8 +483,9 @@ a {
   font-family: "Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif;
   font-size: clamp(3rem, 5vw, 5.2rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: 0.055em;
   line-height: 1.08;
+  text-wrap: balance;
 }
 
 .impact-lead,
@@ -588,6 +592,78 @@ a {
   object-fit: cover;
 }
 
+.daily-showcase {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  gap: 38px;
+  width: min(100%, 1120px);
+  margin: 48px 0 0 100px;
+}
+
+.daily-tabs {
+  display: grid;
+  align-content: start;
+}
+
+.daily-tab {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 10px;
+  align-items: start;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #839b8b;
+  background: transparent;
+  padding: 20px 0 24px;
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.daily-tab:last-child { border-bottom: 1px solid #839b8b; }
+
+.daily-tab-number {
+  color: #688372;
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+}
+
+.daily-tab-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.25;
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.daily-tab:hover .daily-tab-title,
+.daily-tab.active .daily-tab-title {
+  color: var(--olive-dark);
+  transform: translateX(6px);
+}
+
+.daily-stage {
+  align-self: start;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #1f3026;
+  box-shadow: 0 18px 45px rgba(37, 54, 42, 0.12);
+}
+
+.daily-stage .daily-video {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.daily-stage .daily-video-label {
+  min-height: 52px;
+  padding: 14px 20px 16px;
+  font-size: 0.92rem;
+}
+
 body:not(.lang-en) .zh,
 body:not(.lang-en) .en {
   display: none !important;
@@ -633,8 +709,11 @@ body:not(.lang-en) .en {
 .section-heading h2,
 .help-head h2 {
   margin-top: 16px;
-  font-size: clamp(3rem, 5vw, 5.4rem);
-  line-height: 1.08;
+  max-width: 900px;
+  font-size: clamp(3.2rem, 5.4vw, 5.7rem);
+  line-height: 1.12;
+  letter-spacing: 0.06em;
+  text-wrap: balance;
 }
 
 .section-heading p {
@@ -898,8 +977,11 @@ body:not(.lang-en) .en {
 
 .footer-content h2 {
   margin-top: 20px;
-  font-size: clamp(3.2rem, 6vw, 6rem);
-  line-height: 1.07;
+  max-width: 900px;
+  font-size: clamp(3.4rem, 6.2vw, 6.2rem);
+  line-height: 1.1;
+  letter-spacing: 0.065em;
+  text-wrap: balance;
   text-shadow: 0 2px 22px rgba(19, 35, 23, 0.2);
 }
 
@@ -1010,7 +1092,8 @@ body:not(.lang-en) .en {
   .story-copy,
   .daily-grid,
   .daily-video,
-  .daily-video-list {
+  .daily-video-list,
+  .daily-showcase {
     margin-left: 78px;
   }
 
@@ -1119,7 +1202,7 @@ body:not(.lang-en) .en {
     margin-top: 20px;
     font-size: clamp(2.55rem, 11.2vw, 3.2rem);
     line-height: 1.08;
-    letter-spacing: -0.045em;
+    letter-spacing: 0.035em;
   }
 
   .hero-content > p {
@@ -1170,6 +1253,7 @@ body:not(.lang-en) .en {
   .reserved-inner h2 {
     font-size: clamp(2.35rem, 10.8vw, 3.1rem);
     line-height: 1.14;
+    letter-spacing: 0.035em;
   }
 
   .intro-copy p {
@@ -1303,7 +1387,8 @@ body:not(.lang-en) .en {
   .story-copy,
   .daily-grid,
   .daily-video,
-  .daily-video-list {
+  .daily-video-list,
+  .daily-showcase {
     margin-left: 0;
   }
 
@@ -1316,9 +1401,10 @@ body:not(.lang-en) .en {
   .story-copy,
   .daily-grid,
   .daily-video,
-  .daily-video-list { margin-top: 34px; }
+  .daily-video-list,
+  .daily-showcase { margin-top: 34px; }
 
-  .daily-video-list { grid-template-columns: 1fr; }
+  .daily-showcase { grid-template-columns: 1fr; gap: 24px; }
 }
 
 @media (max-width: 390px) {
@@ -1519,22 +1605,39 @@ const dailyIntro = document.querySelector("#daily .daily-lead.en");
 const dailyGrid = document.querySelector("#daily .daily-grid");
 
 if (dailyIntro && dailyGrid) {
-  const videoList = document.createElement("div");
-  videoList.className = "daily-video-list";
+  const showcase = document.createElement("div");
+  showcase.className = "daily-showcase";
+  const tabs = document.createElement("div");
+  tabs.className = "daily-tabs";
+  const stage = document.createElement("div");
+  stage.className = "daily-stage";
   [
-    ["169_1788774730.mp4", "Rescue centre moments"],
-    ["170_1788774812.mp4", "Daily life at the shelter"],
-    ["171_1788775032.mp4", "Everyday animal care"],
-    ["172_1788775160.mp4", "A day at Yatian Pet Paradise"],
+    ["169_1788774730.mp4", "Daily outdoor walks"],
+    ["170_1788774812.mp4", "Summer swimming moments"],
+    ["171_1788775032.mp4", "Daily feeding time"],
+    ["172_1788775160.mp4", "Walk time: a puppy playing in the water bowl"],
     ["173_1788775450.mp4", "Care and companionship"],
     ["174_1788775590.mp4", "Safe spaces to play"],
-  ].forEach(([filename, label]) => {
-    const dailyVideo = document.createElement("div");
-    dailyVideo.className = "daily-video";
-    dailyVideo.innerHTML = `<video controls playsinline preload="metadata"><source src="assets/videos/${filename}" type="video/mp4">Your browser does not support video playback.</video><span class="daily-video-label">${label}</span>`;
-    videoList.append(dailyVideo);
+  ].forEach(([filename, label], index) => {
+    const tab = document.createElement("button");
+    tab.className = "daily-tab";
+    tab.type = "button";
+    tab.setAttribute("aria-selected", String(index === 0));
+    tab.innerHTML = `<span class="daily-tab-number">${String(index + 1).padStart(2, "0")}</span><span class="daily-tab-title">${label}</span>`;
+    tab.addEventListener("click", () => {
+      tabs.querySelectorAll(".daily-tab").forEach((item) => {
+        item.classList.remove("active");
+        item.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      stage.innerHTML = `<div class="daily-video"><video controls playsinline preload="metadata"><source src="assets/videos/${filename}" type="video/mp4">Your browser does not support video playback.</video><span class="daily-video-label">${label}</span></div>`;
+    });
+    tabs.append(tab);
+    if (index === 0) tab.click();
   });
-  dailyGrid.before(videoList);
+  showcase.append(tabs, stage);
+  dailyGrid.before(showcase);
 }
 
 const languageButtons = document.querySelectorAll("[data-language]");
