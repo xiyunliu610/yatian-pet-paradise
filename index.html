@@ -783,27 +783,29 @@ a {
 
 .daily-showcase {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(360px, 1fr);
   gap: 38px;
+  align-items: stretch;
   width: min(100%, 1120px);
   margin: 48px 0 0 100px;
 }
 
 .daily-tabs {
   display: grid;
-  align-content: start;
+  grid-template-rows: repeat(5, minmax(108px, 1fr));
+  align-content: stretch;
 }
 
 .daily-tab {
   display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 10px;
-  align-items: start;
+  grid-template-columns: 54px 1fr;
+  gap: 20px;
+  align-items: center;
   width: 100%;
   border: 0;
   border-top: 1px solid #839b8b;
   background: transparent;
-  padding: 20px 0 24px;
+  padding: 24px 0;
   color: var(--ink);
   text-align: left;
   font: inherit;
@@ -814,14 +816,18 @@ a {
 
 .daily-tab-number {
   color: #688372;
-  font-family: Georgia, serif;
-  font-size: 0.82rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .daily-tab-title {
-  font-size: 1.12rem;
-  font-weight: 600;
-  line-height: 1.25;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.55rem, 2vw, 2.05rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
   transition: transform 180ms ease, color 180ms ease;
 }
 
@@ -832,7 +838,7 @@ a {
 }
 
 .daily-stage {
-  align-self: start;
+  align-self: stretch;
   overflow: hidden;
   border-radius: 24px;
   background: #1f3026;
@@ -840,11 +846,21 @@ a {
 }
 
 .daily-stage .daily-video {
+  display: flex;
+  height: 100%;
   width: 100%;
   margin: 0;
   border: 0;
   border-radius: 0;
+  flex-direction: column;
   box-shadow: none;
+}
+
+.daily-stage .daily-video video {
+  flex: 1 1 auto;
+  height: 0;
+  min-height: 0;
+  aspect-ratio: auto;
 }
 
 .daily-stage .daily-video-label {
@@ -1304,6 +1320,11 @@ body:not(.lang-en) .en {
 
   .daily-grid { grid-template-columns: 1fr; }
 
+  .daily-showcase {
+    grid-template-columns: 1fr;
+    width: calc(100% - 78px);
+  }
+
   .reserved-inner {
     grid-template-columns: 48px 1fr;
   }
@@ -1354,6 +1375,10 @@ body:not(.lang-en) .en {
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 28px, 1220px);
+  }
+
+  .daily-showcase {
+    width: 100%;
   }
 
   .section-pad {
