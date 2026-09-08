@@ -357,8 +357,9 @@ a {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 1.4fr;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
+  width: min(1120px, calc(100% - 48px));
   min-height: 116px;
   margin: 48px auto 28px;
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -392,15 +393,22 @@ a {
 
 .hero-facts > p {
   margin: 0;
-  padding: 0 35px;
+  padding: 0 18px;
   color: rgba(255, 255, 255, 0.78);
   font-family: "Songti SC", "STSong", serif;
   font-size: 1rem;
   line-height: 1.55;
+  text-align: center;
 }
 
 .intro {
   background: var(--paper);
+}
+
+.intro-grid > .section-kicker,
+.about-gallery-head .section-kicker {
+  font-size: 0.84rem;
+  line-height: 1.3;
 }
 
 .intro-grid {
@@ -1451,6 +1459,7 @@ body:not(.lang-en) .en {
   }
 
   .hero-facts {
+    width: min(100% - 28px, 1120px);
     min-height: 96px;
     margin: 40px auto 14px;
     border-radius: 18px;
