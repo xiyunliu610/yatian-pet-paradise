@@ -749,7 +749,8 @@ a {
 .daily-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;
+  margin-top: 62px;
 }
 
 .daily-video {
@@ -892,20 +893,70 @@ body:not(.lang-en) .en {
 }
 
 .daily-card {
-  min-height: 210px;
+  min-height: 285px;
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius);
   background: rgba(255, 253, 247, 0.58);
-  padding: 24px;
+  padding: 30px;
 }
 
-.daily-card span {
+.daily-card > span {
+  display: block;
+  margin-bottom: 78px;
   color: #768275;
   font-family: Georgia, serif;
   font-size: 0.78rem;
 }
 
-.daily-card h3 { margin-top: 35px; }
+.daily-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.45rem;
+}
+
+#daily .daily-header {
+  display: block;
+}
+
+#daily .daily-header > .reserved-number {
+  display: none;
+}
+
+#daily .daily-header .section-kicker {
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+#daily .daily-header h2 {
+  max-width: 650px;
+  margin-top: 28px;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(5rem, 8.2vw, 8rem);
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+}
+
+#daily .daily-header h2 .en > span,
+#daily .daily-header h2 .en > em {
+  display: block;
+}
+
+#daily .daily-header h2 .en > em {
+  margin-top: 0.12em;
+  color: #bd694f;
+  font-family: Georgia, "Songti SC", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+#daily .daily-inner > .daily-lead:nth-of-type(-n + 2) {
+  max-width: 600px;
+  margin: 70px 0 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
 
 .journey {
   background: #eee8da;
@@ -1390,6 +1441,27 @@ body:not(.lang-en) .en {
     white-space: normal;
   }
 
+  #daily .daily-header h2 {
+    max-width: 100%;
+    margin-top: 22px;
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  #daily .daily-inner > .daily-lead:nth-of-type(-n + 2) {
+    max-width: 100%;
+    margin: 32px 0 0;
+    font-size: 1rem;
+  }
+
+  .daily-card {
+    min-height: 250px;
+    padding: 28px;
+  }
+
+  .daily-card > span {
+    margin-bottom: 50px;
+  }
+
   .daily-showcase {
     width: 100%;
   }
@@ -1867,7 +1939,7 @@ body:not(.lang-en) .en {
         </button>
       </div>
     </section>
-    <section class="reserved-section reserved-soft" id="daily"><div class="page-shell daily-inner"><div class="daily-header"><span class="reserved-number">04</span><div><span class="section-kicker"><span class="zh">真实记录亚天宠物乐园的每一天</span><span class="en">Real moments from daily life at Yatian Pet Paradise</span></span><h2><span class="zh">基地日常</span><span class="en">Life at the Shelter</span></h2></div></div><p class="daily-lead zh">基地的每一天，都由许多细小而重要的工作组成。</p><p class="daily-lead en">Every day at the shelter is made up of many small but important acts of care.</p><div class="daily-grid"><article class="daily-card"><span>01</span><h3><span class="zh">饮食与清洁</span><span class="en">Food and clean spaces</span></h3><p class="zh">按时准备食物和清洁饮水，打扫并消毒生活区域。</p><p class="en">We prepare food and fresh water on schedule, and clean and disinfect living areas.</p></article><article class="daily-card"><span>02</span><h3><span class="zh">健康观察</span><span class="en">Health checks</span></h3><p class="zh">留意每只动物的身体状况和精神状态，及时发现异常。</p><p class="en">We watch every animal's physical condition and mood so changes can be noticed early.</p></article><article class="daily-card"><span>03</span><h3><span class="zh">活动与陪伴</span><span class="en">Play and companionship</span></h3><p class="zh">狗狗每天分批到安全区域奔跑、晒太阳和玩耍。</p><p class="en">Dogs take turns visiting a safe area each morning and afternoon to run, play and enjoy the sun.</p></article></div><p class="daily-lead zh">冬天，我们尽力提供温暖舒适的休息空间；夏天则做好通风和降温，确保饮水干净充足。这些日复一日的照顾，是为了让它们安全、健康地生活，也为将来进入新的家庭做好准备。</p><p class="daily-lead en">In winter we provide warm, comfortable resting spaces. In summer we focus on ventilation, cooling and plentiful clean water. This daily care helps animals live safely and prepares them for future homes.</p></div></section>
+    <section class="reserved-section reserved-soft" id="daily"><div class="page-shell daily-inner"><div class="daily-header"><span class="reserved-number">04</span><div><span class="section-kicker"><span class="zh">真实记录亚天宠物乐园的每一天</span><span class="en">Real moments from daily life at Yatian Pet Paradise · 04</span></span><h2><span class="zh">基地日常</span><span class="en"><span>Life at the</span><em>Shelter</em></span></h2></div></div><p class="daily-lead zh">基地的每一天，都由许多细小而重要的工作组成。</p><p class="daily-lead en">Every day at the shelter is made up of many small but important acts of care.</p><div class="daily-grid"><article class="daily-card"><span>01</span><h3><span class="zh">饮食与清洁</span><span class="en">Food and clean spaces</span></h3><p class="zh">按时准备食物和清洁饮水，打扫并消毒生活区域。</p><p class="en">We prepare food and fresh water on schedule, and clean and disinfect living areas.</p></article><article class="daily-card"><span>02</span><h3><span class="zh">健康观察</span><span class="en">Health checks</span></h3><p class="zh">留意每只动物的身体状况和精神状态，及时发现异常。</p><p class="en">We watch every animal's physical condition and mood so changes can be noticed early.</p></article><article class="daily-card"><span>03</span><h3><span class="zh">活动与陪伴</span><span class="en">Play and companionship</span></h3><p class="zh">狗狗每天分批到安全区域奔跑、晒太阳和玩耍。</p><p class="en">Dogs take turns visiting a safe area each morning and afternoon to run, play and enjoy the sun.</p></article></div><p class="daily-lead zh">冬天，我们尽力提供温暖舒适的休息空间；夏天则做好通风和降温，确保饮水干净充足。这些日复一日的照顾，是为了让它们安全、健康地生活，也为将来进入新的家庭做好准备。</p><p class="daily-lead en">In winter we provide warm, comfortable resting spaces. In summer we focus on ventilation, cooling and plentiful clean water. This daily care helps animals live safely and prepares them for future homes.</p></div></section>
 
     <section class="journey section-pad" id="work" hidden>
       <div class="page-shell">
