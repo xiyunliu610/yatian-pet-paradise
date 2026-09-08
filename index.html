@@ -411,16 +411,20 @@ a {
   line-height: 1.3;
 }
 
+.intro-grid > .section-kicker {
+  align-self: start;
+}
+
 .intro-grid {
   display: grid;
-  grid-template-columns: 0.8fr 2fr;
+  grid-template-columns: minmax(250px, 1fr) minmax(610px, 1.25fr);
   gap: 60px;
 }
 
 .intro-copy h2 {
-  max-width: 820px;
+  max-width: 680px;
   font-family: Georgia, "Noto Serif SC", "Songti SC", SimSun, serif;
-  font-size: clamp(3.3rem, 6.2vw, 6.3rem);
+  font-size: clamp(3.3rem, 5.25vw, 5.5rem);
   letter-spacing: -0.055em;
   line-height: 0.96;
 }
@@ -429,9 +433,14 @@ a {
   color: #bd694f;
 }
 
+.intro-title-main {
+  display: block;
+  white-space: nowrap;
+}
+
 .intro-copy p {
-  max-width: 690px;
-  margin: 35px 0 0 auto;
+  max-width: 650px;
+  margin: 35px 0 0;
   color: var(--muted);
   font-size: 1.08rem;
 }
@@ -1377,6 +1386,10 @@ body:not(.lang-en) .en {
     width: min(100% - 28px, 1220px);
   }
 
+  .intro-title-main {
+    white-space: normal;
+  }
+
   .daily-showcase {
     width: 100%;
   }
@@ -1782,7 +1795,7 @@ body:not(.lang-en) .en {
         <div class="section-kicker">OUR BEGINNING · 01</div>
         <div class="intro-copy">
           <h2 class="zh">救下一只动物，<em>不是故事的结尾。</em></h2>
-          <h2 class="en">Saving an animal<em>is only the beginning.</em></h2>
+          <h2 class="en"><span class="intro-title-main">Saving an animal</span><em>is only the beginning.</em></h2>
           <p class="zh">亚天宠物乐园成立于2016年，持续开展流浪动物救助与照护，为它们提供食物、安全住所、基础医疗、日常照护和活动空间。真正的救助从带它离开危险开始，还包括治疗、康复、日复一日的照顾，以及在它准备好以后，认真寻找不会再次放弃它的人。</p>
           <p class="en">Founded in 2016, Yatian Pet Paradise has continuously rescued and cared for homeless animals, providing food, safe shelter, basic medical care, daily support and space to play. True rescue begins with removing an animal from danger. It continues through treatment, recovery and daily care, followed by finding a family that will never abandon them again.</p>
         </div>
