@@ -796,8 +796,8 @@ a {
   grid-template-columns: minmax(0, 1.6fr) minmax(360px, 1fr);
   gap: 38px;
   align-items: stretch;
-  width: min(100%, 1120px);
-  margin: 48px 0 0 100px;
+  width: 100%;
+  margin: 48px 0 0;
 }
 
 .daily-tabs {
@@ -953,12 +953,13 @@ body:not(.lang-en) .en {
   font-weight: 400;
 }
 
-#daily .daily-inner > .daily-lead:nth-of-type(-n + 2) {
-  align-self: end;
+#daily .daily-header + .daily-lead,
+#daily .daily-header + .daily-lead + .daily-lead {
+  align-self: center;
   grid-column: 2;
   grid-row: 1;
   max-width: 510px;
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1.04rem;
   line-height: 1.9;
 }
@@ -971,7 +972,7 @@ body:not(.lang-en) .en {
 
 #daily .daily-inner > .daily-showcase,
 #daily .daily-inner > .daily-grid,
-#daily .daily-inner > .daily-lead:nth-of-type(n + 3) {
+#daily .daily-grid ~ .daily-lead {
   grid-column: 1 / -1;
 }
 
@@ -1401,7 +1402,8 @@ body:not(.lang-en) .en {
     display: block;
   }
 
-  #daily .daily-inner > .daily-lead:nth-of-type(-n + 2) {
+  #daily .daily-header + .daily-lead,
+  #daily .daily-header + .daily-lead + .daily-lead {
     max-width: 620px;
     margin: 42px 0 0;
   }
@@ -1473,7 +1475,8 @@ body:not(.lang-en) .en {
     font-size: clamp(3.2rem, 15vw, 5rem);
   }
 
-  #daily .daily-inner > .daily-lead:nth-of-type(-n + 2) {
+  #daily .daily-header + .daily-lead,
+  #daily .daily-header + .daily-lead + .daily-lead {
     max-width: 100%;
     margin: 32px 0 0;
     font-size: 1rem;
