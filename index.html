@@ -111,10 +111,10 @@ a {
 
 .brand-logo {
   display: block;
-  width: 112px;
-  height: 54px;
-  object-fit: cover;
-  object-position: top;
+  width: 156px;
+  height: 76px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .desktop-nav {
@@ -818,7 +818,7 @@ a {
   border: 0;
   border-top: 1px solid #839b8b;
   background: transparent;
-  padding: 24px 0;
+  padding: 24px 16px;
   color: var(--ink);
   text-align: left;
   font: inherit;
@@ -1333,10 +1333,10 @@ body:not(.lang-en) .en {
 
 .footer-logo {
   display: block;
-  width: 104px;
-  height: 50px;
-  object-fit: cover;
-  object-position: top;
+  width: 148px;
+  height: 72px;
+  object-fit: contain;
+  object-position: center;
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
@@ -1441,6 +1441,12 @@ body:not(.lang-en) .en {
     grid-template-columns: 1fr;
     width: 100%;
     margin-left: 0;
+  }
+
+  .daily-stage .daily-video video {
+    flex: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 
   .reserved-inner {
@@ -1577,8 +1583,8 @@ body:not(.lang-en) .en {
   }
 
   .brand-logo {
-    width: 96px;
-    height: 46px;
+    width: 126px;
+    height: 62px;
   }
 
   .nav-action {
@@ -1741,6 +1747,11 @@ body:not(.lang-en) .en {
 
   .footer-brand {
     margin-inline: auto;
+  }
+
+  .footer-logo {
+    width: 176px;
+    height: 86px;
   }
 
   .footer-bottom > span,
