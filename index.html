@@ -458,7 +458,7 @@ a {
 .about-gallery {
   margin-top: 84px;
   border-top: 1px solid var(--line);
-  padding-top: 68px;
+  padding-top: 40px;
 }
 
 .about-gallery-head {
@@ -506,7 +506,7 @@ a {
   grid-auto-flow: dense;
   grid-auto-rows: 230px;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 40px;
 }
 
 .photo-grid--more {
@@ -737,8 +737,7 @@ a {
   line-height: 1.75;
 }
 
-.story-copy,
-.daily-grid {
+.story-copy {
   margin: 48px 0 0 100px;
 }
 
@@ -752,9 +751,10 @@ a {
 
 .daily-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 62px;
+  width: 100%;
+  margin: 62px 0 0;
 }
 
 .daily-video {
@@ -797,11 +797,11 @@ a {
 
 .daily-showcase {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(360px, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: 38px;
   align-items: stretch;
   width: 100%;
-  margin: 48px 0 0;
+  margin: 40px 0 0;
 }
 
 .daily-tabs {
@@ -972,12 +972,17 @@ body:not(.lang-en) .en {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
   column-gap: 80px;
+  padding-top: 40px;
 }
 
 #daily .daily-inner > .daily-showcase,
 #daily .daily-inner > .daily-grid,
 #daily .daily-grid ~ .daily-lead {
   grid-column: 1 / -1;
+}
+
+#daily .daily-grid ~ .daily-lead {
+  margin-left: 0;
 }
 
 .journey {
@@ -1400,7 +1405,11 @@ body:not(.lang-en) .en {
     margin-left: 78px;
   }
 
-  .daily-grid { grid-template-columns: 1fr; }
+  .daily-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-left: 0;
+  }
 
   #daily .daily-inner {
     display: block;
@@ -1972,7 +1981,7 @@ body:not(.lang-en) .en {
         </button>
       </div>
     </section>
-    <section class="reserved-section reserved-soft" id="daily"><div class="page-shell daily-inner"><div class="daily-header"><span class="reserved-number">04</span><div><span class="section-kicker"><span class="zh">真实记录亚天宠物乐园的每一天</span><span class="en">Real shelter · Everyday moments · 04</span></span><h2><span class="zh">基地日常</span><span class="en"><span>Life at the</span><em>Shelter</em></span></h2></div></div><p class="daily-lead zh">基地的每一天，都由许多细小而重要的工作组成。</p><p class="daily-lead en">Every day at the shelter is made up of many small but important acts of care.</p><div class="daily-grid"><article class="daily-card"><span>01</span><h3><span class="zh">饮食与清洁</span><span class="en">Food and clean spaces</span></h3><p class="zh">按时准备食物和清洁饮水，打扫并消毒生活区域。</p><p class="en">We prepare food and fresh water on schedule, and clean and disinfect living areas.</p></article><article class="daily-card"><span>02</span><h3><span class="zh">健康观察</span><span class="en">Health checks</span></h3><p class="zh">留意每只动物的身体状况和精神状态，及时发现异常。</p><p class="en">We watch every animal's physical condition and mood so changes can be noticed early.</p></article><article class="daily-card"><span>03</span><h3><span class="zh">活动与陪伴</span><span class="en">Play and companionship</span></h3><p class="zh">狗狗每天分批到安全区域奔跑、晒太阳和玩耍。</p><p class="en">Dogs take turns visiting a safe area each morning and afternoon to run, play and enjoy the sun.</p></article></div><p class="daily-lead zh">冬天，我们尽力提供温暖舒适的休息空间；夏天则做好通风和降温，确保饮水干净充足。这些日复一日的照顾，是为了让它们安全、健康地生活，也为将来进入新的家庭做好准备。</p><p class="daily-lead en">In winter we provide warm, comfortable resting spaces. In summer we focus on ventilation, cooling and plentiful clean water. This daily care helps animals live safely and prepares them for future homes.</p></div></section>
+    <section class="reserved-section reserved-soft" id="daily"><div class="page-shell daily-inner"><div class="daily-header"><span class="reserved-number">03</span><div><span class="section-kicker"><span class="zh">真实记录亚天宠物乐园的每一天</span><span class="en">Real shelter · Everyday moments · 03</span></span><h2><span class="zh">基地日常</span><span class="en"><span>Life at the</span><em>Shelter</em></span></h2></div></div><p class="daily-lead zh">基地的每一天，都由许多细小而重要的工作组成。</p><p class="daily-lead en">Every day at the shelter is made up of many small but important acts of care.</p><div class="daily-grid"><article class="daily-card"><span>01</span><h3><span class="zh">饮食与清洁</span><span class="en">Food and clean spaces</span></h3><p class="zh">按时准备食物和清洁饮水，打扫并消毒生活区域。</p><p class="en">We prepare food and fresh water on schedule, and clean and disinfect living areas.</p></article><article class="daily-card"><span>02</span><h3><span class="zh">健康观察</span><span class="en">Health checks</span></h3><p class="zh">留意每只动物的身体状况和精神状态，及时发现异常。</p><p class="en">We watch every animal's physical condition and mood so changes can be noticed early.</p></article><article class="daily-card"><span>03</span><h3><span class="zh">活动与陪伴</span><span class="en">Play and companionship</span></h3><p class="zh">狗狗每天分批到安全区域奔跑、晒太阳和玩耍。</p><p class="en">Dogs take turns visiting a safe area each morning and afternoon to run, play and enjoy the sun.</p></article></div><p class="daily-lead zh">冬天，我们尽力提供温暖舒适的休息空间；夏天则做好通风和降温，确保饮水干净充足。这些日复一日的照顾，是为了让它们安全、健康地生活，也为将来进入新的家庭做好准备。</p><p class="daily-lead en">In winter we provide warm, comfortable resting spaces. In summer we focus on ventilation, cooling and plentiful clean water. This daily care helps animals live safely and prepares them for future homes.</p></div></section>
 
     <section class="journey section-pad" id="work" hidden>
       <div class="page-shell">
